@@ -13,7 +13,7 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Your account has been created! You are now able to log in')
+            messages.success(request, f'Account has been created for {username}! You are now able to log in')
             return redirect('login')
     else:
         form = UserRegisterForm()
@@ -52,3 +52,5 @@ def update_location(request):
         return JsonResponse({"message": f"Set location to {point.wkt})."}, status=200)
     except Exception as e:
         return JsonResponse({"message": str(e)}, status=400)
+
+

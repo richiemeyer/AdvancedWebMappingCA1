@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'world.apps.WorldConfig',
     'users.apps.UsersConfig',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -185,3 +186,37 @@ else:
     ALLOWED_HOSTS = ['*', ]
     CSRF_COOKIE_SECURE = False
     SESSION_COOKIE_SECURE = False'''
+
+PWA_APP_NAME = 'GeoDjango'
+PWA_APP_DESCRIPTION = "Display location using Leaflet JS and OpenStreetMap"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/images/globe.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': '/static/images/globe.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/globe.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
+
+
+

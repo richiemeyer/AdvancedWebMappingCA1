@@ -1,4 +1,39 @@
 {% extends "world/base.html" %}
 {% block content %}
-    <h1>About Page</h1>
+    {% load leaflet_tags %}
+    {% load static %}
+    {% load i18n %}
+    {% load crispy_forms_tags %}
+    {% load crispy_forms_filters %}
+    <head>
+        {% leaflet_js %}
+        {% leaflet_css %}
+        {% block head_title %}{% endblock %}
+        {% block extra_header %}
+
+        {% endblock %}
+
+    </head>
+    <body>
+
+    </body>
+    {% block extra_footer %}
+
+        <h1>About Page</h1>
+        <h3>This is a sample web mapping project by Richard Meyer -<br> A student in TU856 Year 4.</h3>
+        <ul class ="about">
+            <li>The site is hosted by a DigitalOcean docker droplet and uses a domain from GoDaddy.</li>
+            <li>The domain is <i>richardmeyer.xyz</i> and utilizes https encryption using nginx and certbot</li>
+            <li>It is deployed as a progressive web app and can be installed on mobile or desktop</li>
+            <li>The idea of this web app is to promote safe driving by letting users record a journey and see how their speed compares to the speed limit on the current road their on</li>
+            </li>
+            <li>Information on speed limits is gathered from Overpass. This is a read-only API used to query geospatial information</li>
+            <li>Speed Legend:<br> <img src ="https://raw.githubusercontent.com/richiemeyer/Advanced-Web-Mapping-CA2/main/speedingLegend.png" alt ="Speeding Legend" style="width: 70%"></li>
+            <br>
+
+        </ul>
+
+    {% endblock %}
 {% endblock content %}
+
+

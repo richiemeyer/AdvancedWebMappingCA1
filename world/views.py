@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
+from django.contrib.auth.models import User, Group
+
 locations = [
     {
         'author': 'CoreyMS',
@@ -28,4 +30,6 @@ def home(request):
 
 def about(request):
     return render(request, 'world/about.html', {'title': 'About'})
+
+
 
